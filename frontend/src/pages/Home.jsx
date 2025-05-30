@@ -17,9 +17,6 @@ import { FaLinkedin, FaGithub, FaFileCode} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 
-
-
-
 function Home() {
   const scrollRef = useRef(null);
 
@@ -76,14 +73,13 @@ function Home() {
             Huy Duong
           </h1>
           <h3 className="text-xl font-semibold text-gray-400"> CS @ SJSU | SWE Intern @ Nutanix</h3>
-          <p className="py-8" data-aos="fade-up">
+          <p className="py-8">
             Hi! I'm Huy, a Bay Area based Software Engineer. Whether it be a 48-hour hackathon or hiking up a mountain, I love exploring new ventures/challenges both on and off the screen.  Feel free to check out my projects and contact me!
           </p>
         </div>
 
         {/* Social Links */}
         <div className="flex" >
-        
             <a
               href="https://linkedin.com/in/huy-n-duong"
               target="_blank"
