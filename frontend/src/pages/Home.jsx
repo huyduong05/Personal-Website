@@ -12,6 +12,12 @@ import temple from "../images/temple.jpeg";
 import volleyball from "../images/volleyball.jpeg";
 import lake from "../images/lake_tahoe.jpeg";
 
+import { FaLinkedin, FaGithub, FaFileCode} from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
+
+
+
 function Home() {
   const scrollRef = useRef(null);
 
@@ -61,17 +67,65 @@ function Home() {
 
   return (
     <div>
-      <div className="mx-auto max-w-[700px] px-6 pb-24 pt-16 md:px-6 md:pb-20 md:pt-20">
+      {/* Title + Bio */}
+      <div className="mx-auto max-w-[700px] pb-24 pt-10 md:pb-20 md:pt-8" data-aos="fade-up">
         <div className="flex flex-col justify-center">
-          <h1 className="text-5xl font-bold mb-2 text-black" data-aos="fade-up">
+          <h1 className="text-5xl font-bold mb-2 text-black">
             Huy Duong
           </h1>
-          <h3 className="text-xl font-semibold text-gray-400" data-aos="fade-up"> CS @SJSU | SWE Intern @ Nutanix</h3>
-          <p className="py-4" data-aos="fade-up">
-            Hi! I'm Huy, a Bay Area based Software Engineer. I love exploring new ventures both on and off the screen. Feel free to check out my projects or connect with me on LinkedIn!
+          <h3 className="text-xl font-semibold text-gray-400"> CS @ SJSU | SWE Intern @ Nutanix</h3>
+          <p className="py-8" data-aos="fade-up">
+            Hi! I'm Huy, a Bay Area based Software Engineer. Whether it be a 48-hour hackathon or hiking up a mountain, I love exploring new ventures/challenges both on and off the screen.  Feel free to check out my projects and contact me!
           </p>
         </div>
+
+        {/* Social Links */}
+        <div className="flex" >
+        
+            <a
+              href="https://linkedin.com/in/huy-n-duong"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex font-semibold px-6 py-2 rounded-lg bg-gray-200 items-center mr-4 text-black transition-all duration-400 ease-in-out hover:bg-gray-400 hover:text-white"
+            >
+              LinkedIn
+            <FaLinkedin className="ml-1"/>
+            </a>
+          
+            <a
+              href="https://github.com/huyduong05"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex font-semibold px-6 py-2 rounded-lg bg-gray-200 items-center mr-4 text-black transition-all duration-400 ease-in-out hover:bg-gray-400 hover:text-white"
+              >
+              GitHub
+              <FaGithub className="ml-1"/>
+            </a>
+
+            <a
+              href="mailto:huyduong.business@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex font-semibold px-6 py-2 rounded-lg bg-gray-200 items-center mr-4 text-black transition-all duration-400 ease-in-out hover:bg-gray-400 hover:text-white"
+              >
+              Email
+              <MdEmail className="ml-1"/>
+            </a>
+
+            <a
+              href="/projects"
+              className="flex font-semibold px-6 py-2 rounded-lg bg-gray-200 items-center mr-4 text-black transition-all duration-400 ease-in-out hover:bg-gray-400 hover:text-white"
+              >
+              Projects
+              <FaFileCode className="ml-1"/>
+            </a>
+
+
+        </div>
+        
+      
       </div>
+
 
       {/* Seamless auto-scrolling carousel */}
       <div className="overflow-hidden">
@@ -94,6 +148,8 @@ function Home() {
           ))}
         </div>
       </div>
+
+      
     </div>
   );
 }
