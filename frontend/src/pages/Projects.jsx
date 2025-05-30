@@ -46,30 +46,26 @@ function Projects() {
 
 
   return (
-    <>
-        <div className="mx-auto max-w-[700px]" data-aos="fade-up">
-            {/* Project Page Title */}
-            <div className="flex flex-col justify-center">
-            <h1 className="text-5xl font-bold mb-4 text-black">
-                Projects
-            </h1>
-            <p className="mb-2" data-aos="fade-up">
-                Here are some of my projects that I have developed on during hackathons, in classes, and apart of on-campus clubs.
-            </p>
-            </div>
+    <div className="px-4 md:px-6">
+      {/* Project Page Title */}
+      <div className="mx-auto max-w-[700px] pt-10 md:pt-12" data-aos="fade-up">
+        <div className="flex flex-col justify-center">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 text-black">
+            Projects
+          </h1>
+          <p className="text-base md:text-lg mb-4 text-gray-700" data-aos="fade-up">
+            Here are some of my projects that I have developed during hackathons, in classes, and as part of on-campus clubs.
+          </p>
         </div>
-        
-        <div className="mx-auto max-w-[1000px] pb-24 md:pb-20">
+      </div>
 
-            {/* Project Cards */}
-            <div className="mt-8">
-                {projects.map((proj, idx) => (
-                    <ProjectCard key={idx} {...proj}/>
-                ))}
-            </div>
-
-        </div>
-    </>
+      {/* Project Cards */}
+      <div className="mx-auto max-w-[1000px] pb-24 md:pb-20 mt-8 space-y-12">
+        {projects.map((proj, idx) => (
+          <ProjectCard key={idx} {...proj} />
+        ))}
+      </div>
+    </div>
   );
 }
 

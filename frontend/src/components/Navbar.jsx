@@ -1,26 +1,49 @@
 import { NavLink } from "react-router-dom";
-import { FaHome, FaFileCode, FaFile } from "react-icons/fa";
-
-
+import { FaHome, FaFileCode } from "react-icons/fa";
+import { useState } from "react";
 
 function Navbar() {
-  
-  return (
-    <nav className="bg-white py-6 px-10 flex justify-end items-center">
+  const [menuOpen, setMenuOpen] = useState(false);
 
-      <div className="flex justify-center items-center space-x-4 text-black text-sm">
-        <NavLink to="/"
+  return (
+    <nav className="bg-white px-6 py-4 md:px-10">
+      {/* Mobile Toggle */}
+      <div className="flex justify-between items-center md:hidden">
+        <h1 className="text-lg font-bold">Huy Duong</h1>
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="text-gray-800 focus:outline-none"
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* Nav Links */}
+      <div
+        className={`mt-4 md:mt-0 md:flex md:justify-end md:items-center space-y-2 md:space-y-0 md:space-x-4 ${
+          menuOpen ? "block" : "hidden"
+        } md:block`}
+      >
+        <NavLink
+          to="/"
           className={({ isActive }) =>
-            isActive ? "flex items-center bg-gray-300 px-4 py-2 rounded-lg" :  "flex items-center bg-gray-100 px-4 py-2 rounded-lg hover:bg-gray-300 transition-all duration-300 ease-in-out"
-          }>
+            isActive
+              ? "flex items-center bg-gray-300 px-4 py-2 rounded-lg"
+              : "flex items-center bg-gray-100 px-4 py-2 rounded-lg hover:bg-gray-300 transition"
+          }
+        >
           <span>Home</span>
           <FaHome className="ml-1" />
         </NavLink>
 
-        <NavLink to="/projects"
-        className={({ isActive }) =>
-            isActive ? "flex items-center bg-gray-300 px-4 py-2 rounded-lg" :  "flex items-center bg-gray-100 px-4 py-2 rounded-lg hover:bg-gray-300 transition-all duration-300 ease-in-out"
-          }>
+        <NavLink
+          to="/projects"
+          className={({ isActive }) =>
+            isActive
+              ? "flex items-center bg-gray-300 px-4 py-2 rounded-lg"
+              : "flex items-center bg-gray-100 px-4 py-2 rounded-lg hover:bg-gray-300 transition"
+          }
+        >
           <span>Projects</span>
           <FaFileCode className="ml-1" />
         </NavLink>
