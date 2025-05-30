@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <nav className="bg-white px-6 py-4 md:px-10">
       {/* Mobile Toggle */}
-      <div className="flex justify-between items-center md:hidden">
+      <div className="flex justify-end items-center md:hidden">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="text-gray-800 focus:outline-none"
