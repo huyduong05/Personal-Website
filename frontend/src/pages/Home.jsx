@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -14,6 +15,7 @@ import lake from "../images/lake_tahoe.jpeg";
 
 import { FaLinkedin, FaGithub, FaFileCode} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+
 
 
 
@@ -112,13 +114,13 @@ function Home() {
               <MdEmail className="ml-1"/>
             </a>
 
-            <a
-              href="/projects"
+            <Link
+              to="/projects"
               className="flex font-semibold px-6 py-2 rounded-lg bg-gray-200 items-center mr-4 text-black transition-all duration-400 ease-in-out hover:bg-gray-400 hover:text-white"
               >
               Projects
               <FaFileCode className="ml-1"/>
-            </a>
+            </Link>
 
 
         </div>
