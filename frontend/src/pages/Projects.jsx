@@ -7,7 +7,7 @@ import SPOF from "../projects/SpartanFeature.png";
 import TB from "../projects/TogoBot.gif";
 import TBIRL from "../projects/TogoBotIRL.png";
 
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "../components/ProjectCard";
 
 function Projects() {
   
