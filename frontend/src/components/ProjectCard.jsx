@@ -26,7 +26,7 @@ function ProjectCard({ title, images, description, techStack, github }) {
             key={idx}
             src={img}
             alt={`${title} screenshot ${idx + 1}`}
-            className="border shadow-md rounded-lg object-cover w-full sm:w-1/2 h-48 sm:h-64"
+            className="border shadow-md rounded-lg object-contain w-full sm:w-1/2 h-48 sm:h-64"
           />
         ))}
       </div>
