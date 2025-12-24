@@ -33,6 +33,18 @@ function Home() {
 
   const duplicatedImages = [...images, ...images]; // For seamless looping
 
+  // Preload images for faster loading
+  useEffect(() => {
+    images.forEach((image) => {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "image";
+      link.href = image.src;
+      document.head.appendChild(link);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // images is constant, no need to re-run
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -128,15 +140,22 @@ function Home() {
           className="flex whitespace-nowrap overflow-x-scroll no-scrollbar"
           style={{ scrollBehavior: "auto" }}
         >
-          {duplicatedImages.map((image, index) => (
-            <div key={index} className="w-[250px] flex-shrink-0 p-2">
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="rounded-xl object-cover w-full h-40 sm:h-64"
-              />
-            </div>
-          ))}
+          {duplicatedImages.map((image, index) => {
+            // First 6 images load eagerly, rest lazy load
+            const loading = index < 6 ? "eager" : "lazy";
+            
+            return (
+              <div key={index} className="w-[250px] flex-shrink-0 p-2">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  loading={loading}
+                  decoding="async"
+                  className="rounded-xl object-cover w-full h-40 sm:h-64"
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
